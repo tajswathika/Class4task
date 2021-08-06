@@ -1,3 +1,50 @@
+1.How to compare two JSON have the same properties without order?
+var obj1 = { name: "Person 1", age:5 };
+var obj2 = { age:5, name: "Person 1" };
+
+Console.log(Object.is(obj1, obj2);
+
+2.Use the rest countries API url -> https://restcountries.eu/rest/v2/all and display all the country flags in console
+3.Use the same rest countries and print all countries name, region, sub region and population
+
+var request = new XMLHttpRequest();
+request.open('Get', 'https://restcountries.eu/rest/v2/all', true);
+request.send();
+request.onload =function()
+{
+    var data = JSON.parse(this.response);
+
+    //var Asiacount = data.filter((element)=>element.region === "Asia");
+    //console.log(Asiacount);
+
+    //var popcount = data.filter((element)=>element.population<200000);
+    //console.log(popcount);
+
+     var uscurr = data.filter((element)=>{
+         for(let i in element.currencies){
+         if(element.currencies[i].code === "USD")
+         return true;
+         
+        }
+     });
+     
+     //console.log(uscurr);
+     var pop=[]
+     var uscurr = data.filter((element)=>{
+        for(let i in element.population){
+        pop[i] =element.population[i].code       
+       }
+    });
+    console.log(pop);
+    //var totpop = data.reduce((acc,ele)=>acc + ele.population,0);
+    //console.log(totpop);
+    console.log("Name :" + data[i].name +";Region ="+ data[i].region +";Subregion =" + data[i].subregion +";Flag="+data[i].flag);
+
+}
+
+
+4.https://medium.com/@reach2arunprakash/www-guvi-io-zen-d395deec1373
+
 Task1:
 
 1.Declare four variables without assigning values and print them in console
@@ -58,18 +105,189 @@ let A = parseFloat(userInput[0]);
 5.Meter to miles
 
 
-Pounds to kg
-Calculate Batting Average
-Calculate five test scores and print their average
-Power of any number x ^ y.
-Calculate Simple Interest
-Calculate area of an equilateral triangle
-Area Of Isosceles Triangle
-Volume Of Sphere
-Volume Of Prism
-Find area of a triangle.
-Give the Actual cost and Sold cost, Calculate Discount Of Product
-Given their radius of a circle and find its diameter, circumference and area.
-Given two numbers and perform all arithmetic operations.
-Display the asterisk pattern as shown below(No loop needed):    
+//1 meter = 0.000621371 miles
+
+let meterValue=10;
+let milesvalue=0;
+
+milesvalue=meterValue*0.000621371
+
+console.log(meterValue,milesvalue);
+
+6.Pounds to kg
+
+//kg=lb/2.2046
+let lb=10;
+let kg=0;
+
+kg=lb/2.2046;
+
+console.log(lb,kg);
+
+7.Calculate Batting Average
+
+let totscore = 200;
+let totMatch=5;
+let bataverage=0;
+bataverage=totscore/totMatch;
+
+console.log(totscore,totMatch,bataverage);
+
+8.Calculate five test scores and print their average
+
+var test1 =[50,60,40,30,75];
+var test2 =[42,63,58,70,90];
+var test3 =[42,63,58,70,90];
+var test4 =[42,63,58,70,90];
+var test5 =[42,63,58,70,90];
+
+var avg = [];
+var sum = [];
+var test;
+let avg1,avg2,avg3,avg4,avg5;
+sum1 = test1.reduce((acc,ele)=>acc+ele);
+avg1= sum1/5;
+sum2 = test2.reduce((acc,ele)=>acc+ele);
+avg2= sum2/5;
+sum3 = test3.reduce((acc,ele)=>acc+ele);
+avg3= sum3/5;
+sum4 = test4.reduce((acc,ele)=>acc+ele);
+avg4= sum4/5;
+sum5 = test5.reduce((acc,ele)=>acc+ele);
+avg5= sum5/5;
+
+avg = (avg1+avg2+avg3+avg4+avg5)/5;
+console.log(avg);
+
+9.Power of any number x ^ y.
+
+let x=2;
+let y=5;
+
+let power;
+
+power = Math.pow(x, y);
+console.log(power);
+
+10.Calculate Simple Interest
+
+let Input = userInput[0].split(" ")
+for(var i=0;i<3;i++)
+{
+    Input[i] = parseFloat(Input[i]);
+}
+let SI;
+let P=Input[0];
+let N=Input[1];
+let R=Input[2];
+let FinSI;
+SI = parseFloat(P*N*R/100);
+SI = SI.toFixed(2);
+console.log(SI);
+
+11.Calculate area of an equilateral triangle
+
+let a=3;
+let area = 0;
+area = ( 1.73 * a * a)/4;
+console.log(area);
+
+12.Area Of Isosceles Triangle
+
+let l=5, b = 3, h=10;
+let area =0;
+area = (l*b*h)/2;
+console.log(area);
+
+13.Volume Of Sphere
+
+let radius = 5;
+let volume = (4/3)* Math.PI * Math.pow(radius, 3);
+
+console.log('Volume of Sphere: '+volume.toFixed(2));
+
+14.Volume Of Prism
+
+var base = 20;
+var height = 5;
+var Volume = 0;
+Volume = base area * height;
+console.log(Volume);
+
+15.Find area of a triangle.
+
+var base area = 20;
+var height = 5;
+var Area = 0;
+Area = (base area * height)/2;
+console.log(Area);
+
+16.Give the Actual cost and Sold cost, Calculate Discount Of Product
+
+var Acost = 750;
+var Scost = 550;
+var Disc = 0;
+Disc = Acost - Scost;
+console.log("Discount of the product :" + Disc );   
+
+17.Given their radius of a circle and find its diameter, circumference and area.
+
+if(userInput[0]<0)
+    console.log("Error");
+else
+{
+   var Circumference = 2*22/7*userInput[0];
+   console.log(Circumference.toFixed(2));
+}
+
+18.Given two numbers and perform all arithmetic operations.
+
+var a=4,b=2;
+var add=0;
+var subt=0;
+var mult=0;
+var div=0;
+
+add = a+b;
+console.log("Addition of two numbers :" +add);
+
+subt = a-b;
+console.log("Subtraction of two numbers :" +subt);
+
+mult = a*b;
+console.log("Multiplication of two numbers :" +mult);
+
+div = a/b;
+console.log("Division of two numbers :" +div);
+
+19.Display the asterisk pattern as shown below(No loop needed):    
+
+console.log("*".repeat(5));
+console.log("*".repeat(5));
+console.log("*".repeat(5));
+console.log("*".repeat(5));
+console.log("*".repeat(5));
+
+20.Calculate electricity bill?
+For example, a consumer consumes 100 watts per hour daily for one month. Calculate the total energy bill of that consumer if per unit rate is 10?
+total consumed = 72000watts
+1 unit =1000watts
+
+var rate = 10;
+var consumed = 72;
+var bill =0;
+bill = consumed * rate;
+console.log("Total energy bill of the consumer is  " + bill);
+
+21.Program To Calculate CGPA
+
+var English = 90;  
+var Hindi = 80;
+var Maths = 90;  
+var Science =90;  
+var SocialStudy = 80;
+var CGPA=0;
+CGPA = (90+80+90+90+80)/(5)  
+var CGPAper = 9.5 * (CGPA);
+console.log(CGPAper);
 
