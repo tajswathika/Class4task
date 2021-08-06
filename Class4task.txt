@@ -1,0 +1,75 @@
+Task1:
+
+1.Declare four variables without assigning values and print them in console
+
+var a,b,c,d;
+console.log(a,b,c,d);
+
+Output : 
+undefined undefined undefined undefined
+
+Since we havent assigned any value, we cannot access the variables.
+
+2.How to get value of the variable myvar as output
+
+var myvar = 1;
+console.log(myvar);
+
+3. Declare variables to store your first name, last name, marital status, country and age in multiple lines
+
+var fstName
+
+
+
+6. Convert the string to integer
+parseInt()
+
+
+
+
+Task2:
+
+1.Square of a number
+
+var a = userInput[0];
+var sqr = 0;
+sqr = a*a;
+console.log(sqr);
+
+2.Swapping 2 numbers
+
+let x = 3, y=4;
+[x,y] = [y,x];
+console.log(x,y);
+
+3.Addition of 3 numbers
+
+var a=10,b=2.0,c=65,sum =0;
+sum = a+b+c;
+console.log(sum);
+
+4.Celsius to Fahrenheit conversion
+
+let A = parseFloat(userInput[0]);
+    
+        let Fahrenheit = (A*9/5) + 32;
+        console.log(Fahrenheit.toFixed(2));
+
+5.Meter to miles
+
+
+Pounds to kg
+Calculate Batting Average
+Calculate five test scores and print their average
+Power of any number x ^ y.
+Calculate Simple Interest
+Calculate area of an equilateral triangle
+Area Of Isosceles Triangle
+Volume Of Sphere
+Volume Of Prism
+Find area of a triangle.
+Give the Actual cost and Sold cost, Calculate Discount Of Product
+Given their radius of a circle and find its diameter, circumference and area.
+Given two numbers and perform all arithmetic operations.
+Display the asterisk pattern as shown below(No loop needed):    
+
